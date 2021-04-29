@@ -6,15 +6,15 @@
         <div class="wave wave1" ref="slika"></div>
       </v-img>
 
-      <v-container style="max-width:75.25rem"> 
-        <v-row class="rowAbout" >
+      <v-container style="max-width:75.25rem" class="container"> 
+        <v-row class="container__rowAbout">
           <v-col sm="12" md="6" offset-md="3">
             <h1>My Story</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, eveniet. Assumenda, voluptate a illo sapiente, voluptatem quibusdam perferendis dolore repellendus saepe cum vero quia non eligendi? Tenetur sunt quos aliquam!</p>
+            <p class="myStoryText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, eveniet. Assumenda, voluptate a illo sapiente, voluptatem quibusdam perferendis dolore repellendus saepe cum vero quia non eligendi? Tenetur sunt quos aliquam!</p>
           </v-col>
         </v-row>
 
-        <v-row class="rowAbout" ref="prviOdeljak">
+        <v-row class="container__rowAbout" ref="prviOdeljak">
           <v-col cols="12" md="6" class="d-flex justify-center flex-column align-center">
             <h2>Pharagraph header</h2>
             <p class="text-center text-md-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt similique explicabo nobis! Magnam ratione eum ut voluptatibus odit quod, quisquam, eius dignissimos eos architecto libero nisi sed quam itaque consequuntur.</p>
@@ -24,7 +24,7 @@
           </v-col>
         </v-row>
 
-        <v-row class="rowAbout" ref="drugiOdeljak">
+        <v-row class="container__rowAbout" ref="drugiOdeljak">
           <v-col cols="12" md="6">
             <v-lazy height="400"><v-img src="@/assets/cona/3.jpg" style="border-radius:4%;"></v-img></v-lazy>
           </v-col>
@@ -34,13 +34,13 @@
           </v-col>
         </v-row>
 
-        <v-row class="rowAbout">
+        <v-row class="container__rowAbout">
           <v-col cols="12" md="6" offset-md="3">
             <h3  class="font-weight-black">Ph0toGGraphYY iS mY PasSi0NnN</h3>
           </v-col>
         </v-row>
 
-        <v-row class="rowAbout" ref="treciOdeljak">
+        <v-row class="container__rowAbout" ref="treciOdeljak">
           <v-col cols="12" md="6" class="d-flex justify-center flex-column align-center">
             <h2>Paragraph header</h2>
             <p class="text-center text-md-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur fugit reprehenderit magnam fugiat animi! Animi eos deserunt nam? Omnis natus sapiente ut assumenda accusamus, blanditiis magnam accusantium libero nulla in.</p>
@@ -115,143 +115,108 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  *{
-    color:white;
-  }
-  //na 25% min height za container da gurne footer dole
-  #app > div > div.container{
-    min-height:100vh;
-  }
-  .about{
-    // background: linear-gradient(150deg, rgb(255, 251, 220) 50%,rgb(241, 237, 179) 30%);
-    background: linear-gradient(150deg, #93495E 50%,#333D51 30%);
-    // background: rgb(255, 251, 220)!important;
-  }
-  #app > div > div.v-image.v-responsive.theme--light{
-    height:100vh;
-  }
-  #app > div > div.v-image.v-responsive.theme--light > div.v-responsive__content > h1 > a{
-    position:absolute;
-    top:90%;
-    left:50%;
-    transform: translate(-50%,-90%);
-    font-size: 5em;
-    color: white;
-    font-family: 'Andika New Basic', sans-serif;
-    letter-spacing: 2px;
-  }
-  #app > div > div.v-image.v-responsive.theme--light > div.v-responsive__content > h1 > a i{
-    font-size: 1em;
-  }
-  @media screen and(max-width:425px){
-    #app > div > div.v-image.v-responsive.theme--light > div.v-responsive__content > h1 > a{
-      font-size: 2em;
-      letter-spacing: 2px;
-    }
-  }
-  //tekst ispod slike
-  #app > div > div.container > div > div > h1{
-    font-size: 3.125rem;
-    line-height: 1.3;
-    margin: 0 auto 1.75rem;
-    letter-spacing: 3px;
-  }
-  #app > div > div.container > div > div > p{
-    font-size: 1.125rem;
-    font-weight: 400;
-    line-height:1.5;
-  }
-  //rows
-  .rowAbout:not(:first-child){
-    margin-bottom: 80px;
-  }
-  .rowAbout:first-child{
-    margin-bottom:50px;
-  }
-  //h2
-  .container > div > div > h2{
-    font-size: 1.625rem;
-    padding: 10px 0;
-    letter-spacing: 2px;
-  }
-  //p
-  #app > div > div.container > div > div.d-flex.justify-center.flex-column.align-center.col-md-6.col-12 > p{
-    font-size: 1rem;
-  }
-  //h3
-  .container h3{
-    font-size:  1.625rem;
-    letter-spacing: 3px;
-    // color: rgb(22, 155, 126) ;
-    color: white;
-  }
-  @media screen and(max-width:1200px){
-    .container{
-      max-width: 80%!important;
-    }
-  }
-  @media screen and(max-width:960px){
-    .rowAbout{
-      margin-bottom:10px!important;
-    }
-    .container{
-      max-width: 75%!important;
-    }
-  }
-  @media screen and(max-width:600px){
-    .container{
-      max-width: 100%!important;
-    }
-  }
-  @media screen and(max-width:450px){
-    //height img div
-    #app > div > div.container > div:nth-child(3) > div:nth-child(1) > div{
-      height: 270px!important;
-    }
-    #app > div > div.container > div:nth-child(2) > div:nth-child(2) > div{
-      height: 270px!important;
-    }
-    #app > div > div.container > div:nth-child(5) > div:nth-child(2) > div{
-      height: 270px!important;
-    }
-  }
-
-
-
-  //animacija
-  .wave{
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 80px;
-      background: url('../assets/waveRoze.png');
-      background-size: 1500px 100px;
-  }
-  
-  .wave.wave1{
-      animation: animate 30s linear infinite;
-      z-index: 1000;
-      opacity: 1;
-      animation-delay: 0s;
-      bottom:0;
-      color:red;
-  }
-  @keyframes animate {
-      0%{
-      background-position-x: 0;
+    .about {
+      color: white;
+      background: linear-gradient(150deg, #93495E 50%,#333D51 30%);
+      .wave {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background: url('../assets/waveRoze.png');
+        background-size: 1500px 100px;
+        &.wave1 {
+          animation: animate 30s linear infinite;
+          z-index: 1000;
+          opacity: 1;
+          animation-delay: 0s;
+          bottom: 0;
+          color: red;
+        }
+        @keyframes animate {
+          0%{
+          background-position-x: 0;
+          }
+          100%{
+          background-position-x: -1000px;
+          }
+        }
       }
-      100%{
-      background-position-x: -1000px;
+
+      img {
+        height: 100vh;
+        div > h1 {
+          position: absolute;
+        }
       }
-  }
+      .container {
+        min-height: 100vh;
+        h3 {
+          font-size: 1.625rem;
+          letter-spacing: 3px;
+          color: white;
+        }
+        &__rowAbout {
+          h1 {
+            font-size: 3.125rem;
+            line-height: 1.3;
+            margin: 0 auto 1.75rem;
+            letter-spacing: 3px;
+          }
+          h2 {
+            font-size: 1.625rem;
+            padding: 10px 0;
+            letter-spacing: 2px;
+          }
+          p.myStoryText {
+            font-size: 1.125rem;
+            font-weight: 400;
+            line-height:1.5;
+          }
+          p {
+            font-size: 1rem;
+          }
+          
+          &:not(:first-child) {
+            margin-bottom: 80px;
+          }
+          &:first-child {
+            margin-bottom: 50px;
+          }
+        }
+      }
+    }
 
-  // @media screen and(min-height:3500px) {
-  //   .footer{
-  //     position:absolute;
-  //     bottom:0;
-  //     width: 100%;
-  //   }
-  // }
-
+    @media screen and (max-width: 1200px) {
+      .container {
+        max-width: 80%!important;
+      }
+    }
+    @media screen and (max-width: 960px) {
+      .container {
+        max-width: 75%!important;
+        &__rowAbout {
+          margin-bottom: 10px!important;
+        }
+      }
+    }
+    @media screen and (max-width: 600px) {
+      .container {
+        max-width: 100%!important;
+      }
+    }
+    @media screen and (max-width: 450px) {
+      .container__rowAbout {
+        &:nth-child(2) > div:nth-child(2) > div {
+          height: 270px!important;
+        }
+        &:nth-child(3) > div:nth-child(1) > div {
+          height: 270px!important;
+        }
+        &:nth-child(5) > div:nth-child(2) > div {
+          height: 270px!important;
+        }
+      }
+    }
 </style>
