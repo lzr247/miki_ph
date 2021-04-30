@@ -43,6 +43,10 @@ export default {
             display: flex;
             align-items: center;
             padding: 10px 0;
+            &:hover a{
+                color: rgb(129, 129, 129)!important;
+                transition: all .2s;
+            }
             h1 {
                 font-family: 'Yellowtail', cursive;
                 font-size: 40px;
@@ -54,6 +58,9 @@ export default {
                 padding: 10px 0;
                 text-transform: uppercase;
                 letter-spacing: 2px;
+                &:hover {
+                    color: white!important;
+                }
             }
             i {
                 font-size: 35px;
@@ -63,10 +70,6 @@ export default {
                 padding-top: 7px;
                 margin-bottom: -3px;
                 letter-spacing: 1px;
-            }
-            span:hover a{
-                color: rgb(129, 129, 129)!important;
-                transition: all .2s
             }
             span a {
                 display: inline;
